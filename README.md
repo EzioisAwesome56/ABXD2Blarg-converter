@@ -11,3 +11,7 @@ Next, delete everything from your install execpt the config, data, and the theme
 Then, download a copy of [BlargBoard 1.2](https://github.com/RoadrunnerWMC/Blargboard-1.1) and extract everything except the data and themes folders to the place where your ABXD install was
 After that, download this repo and extract it to the root of your board install folder
 Then go to /convert.php in your web browser and follow the one screen instructions
+
+# NOTICE
+even though ive gotten far, im stuck
+progress is halted until further notice
