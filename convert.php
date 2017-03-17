@@ -128,7 +128,7 @@ if ($_POST['submit'])
 	Import('database.sql');
 	
 	//here, instead of trying to detect a user's rank, just change the coloum name. way easier
-	Query("ALTER TABLE users CHANGE `powerlevel` `primarygroup` int(11)")
+	Query("ALTER TABLE users CHANGE `powerlevel` `primarygroup` int(11)");
 	Query("insert into {users} (id, name, password, pss, primarygroup, regdate, lastactivity, lastip, email, sex, theme) values ({0}, {1}, {2}, {3}, {4}, {5}, {5}, {6}, {7}, {8}, {9})", 
 		-1, 'banned', 'dfsafs', 'fsdaf', , time(), 'dankweed', '', 2, 'abxd3');	
 ?>
