@@ -120,7 +120,7 @@ if ($_POST['submit'])
 	
 	$salt = Shake(24);
 	define('SALT', $salt);
-	$saltfile = '<?php define(\'SALT\', '.phpescape($salt).'); ?>';
+	$saltfile = '<?php define(\'SALT\', '.$_POST['passsalt'].'); ?>';
 	file_put_contents('config/salt.php', $saltfile);
 	
 	$kurifile = '<?php define(\'KURIKEY\', '.phpescape(Shake(32)).'); ?>';
@@ -159,7 +159,7 @@ else
 	<div class="blarg">
 	<table>
 	
-	<tr><td>MySQL server:</td><td><input type="text" name="dbserver" size=64 value="localhost"></td></tr>
+	<tr><td>Password Salt</td><td><input type="text" name="passsalt" value=""></td></tr>
 	<tr><td>MySQL username:</td><td><input type="text" name="dbusername" size=64 value=""></td></tr>
 	<tr><td>MySQL password:</td><td><input type="password" name="dbpassword" size=64 value=""></td></tr>
 	<tr><td>MySQL database:</td><td><input type="text" name="dbname" size=64 value=""></td></tr>
