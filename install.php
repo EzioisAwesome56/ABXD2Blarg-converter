@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<title>Blargboard install</title>
+<title>ABXD2Blarg Converter</title>
 <style type="text/css">
 a:link { color: #0e5; }
 a:visited { color: #0e5; }
@@ -68,7 +68,7 @@ td:not([colspan='2'])
 </head>
 <body>
 <div id="container">
-<h1>Blargboard install</h1>
+<h1>AcmlmboardXD 2 Blargboard Converter</h1>
 <br>
 <?php
 
