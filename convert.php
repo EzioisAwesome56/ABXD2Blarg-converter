@@ -71,6 +71,8 @@ td:not([colspan='2'])
 <h1>AcmlmboardXD 2 Blargboard Converter</h1>
 <br>
 <?php
+//include("config/database.php");
+require('lib/mysql.php');
 
 function phpescape($var)
 {
@@ -103,7 +105,7 @@ if (version_compare(PHP_VERSION, '5.3.0') < 0)
 
 if ($_POST['submit'])
 {
-	$test = new mysqli($_POST['dbserver'], $_POST['dbusername'], $_POST['dbpassword'], $_POST['dbname']);
+	$test = new mysqli($dbserv, $dbuser, $dbpass, $dbname);
 	if ($test->connect_error)
 		die('Error: failed to connect to the MySQL server: '.$test->connect_error.'<br><br>Check your parameters.'.$footer);
 	
@@ -116,7 +118,6 @@ if ($_POST['submit'])
 	$kurifile = '<?php define(\'KURIKEY\', '.phpescape(Shake(32)).'); ?>';
 	file_put_contents('config/kurikey.php', $kurifile);
 	
-	require('lib/mysql.php');
 	require('lib/mysqlfunctions.php');
 	$debugMode = 1;
 	
