@@ -1,20 +1,8 @@
 /* 
-	Blargboard default data set
-	
-	* sample category/forum accessible to everyone
-	* usergroups and their permissions
-	* default settings
-	* smilies
+	ABXD2BLARG upgrade dataset
+	Edited version of BlargBoard 1.2's dataset
+	Most of the crap that was here isnt needed, so we remove it
 */
-
-INSERT INTO `{$dbpref}categories` (`id`, `name`, `corder`, `board`) VALUES
-(1, 'Sample category', 0, '');
-
-INSERT INTO `{$dbpref}forums` (`id`, `title`, `description`, `catid`, `numthreads`, `numposts`, `lastpostdate`, `lastpostuser`, `lastpostid`, `hidden`, `forder`, `board`, `l`, `r`, `redirect`, `offtopic`) VALUES
-(1, 'Sample forum', 'This is a sample forum. You might want to add some more, though.', 1, 0, 0, 0, 0, 0, 0, 0, '', 1, 2, '', 0);
-
-INSERT INTO `{$dbpref}misc` (`version`, `views`, `hotcount`, `maxusers`, `maxusersdate`, `maxuserstext`, `maxpostsday`, `maxpostsdaydate`, `maxpostshour`, `maxpostshourdate`, `milestone`) VALUES
-(1337, 0, 30, 0, 0, '', 0, 0, 0, 0, '');
 
 INSERT INTO `{$dbpref}usergroups` (`id`, `name`, `title`, `rank`, `type`, `display`, `color_male`, `color_female`, `color_unspec`) VALUES
 (-1, 'Banned users', 'Banned', -1000, 0, 0, '#888888', '#888888', '#888888'),
@@ -289,89 +277,3 @@ INSERT INTO `{$dbpref}permissions` (`applyto`, `id`, `perm`, `arg`, `value`) VAL
 (0, 4, 'user.viewhiddenforums', 0, 1),
 (0, 4, 'user.votepolls', 0, 1),
 (0, 4, 'user.voteposts', 0, 1);
-
-INSERT INTO `{$dbpref}settings` (`plugin`, `name`, `value`) VALUES
-('main', 'boardname', 'Blargboard'),
-('main', 'metaDescription', 'Blargboard, the best board software ever.'),
-('main', 'metaTags', 'blargboard blarg board'),
-('main', 'dateformat', 'm-d-y, h:i a'),
-('main', 'customTitleThreshold', '100'),
-('main', 'oldThreadThreshold', '2'),
-('main', 'viewcountInterval', '50000'),
-('main', 'ajax', '1'),
-('main', 'guestLayouts', '1'),
-('main', 'registrationWord', ''),
-('main', 'breadcrumbsMainName', 'Blargboard'),
-('main', 'mailResetSender', ''),
-('main', 'defaultTheme', 'blargboard'),
-('main', 'defaultLayout', 'abxd'),
-('main', 'defaultLanguage', 'en_US'),
-('main', 'showPoRA', '0'),
-('main', 'tagsDirection', 'Right'),
-('main', 'PoRATitle', 'Blargbox'),
-('main', 'PoRAText', 'Welcome to Blargboard. Edit this.'),
-('main', 'profilePreviewText', 'blah blah sample post'),
-('main', 'menuMainName', 'fdgfdg'),
-('main', 'showGender', '1'),
-('main', 'nofollow', '0'),
-('main', 'floodProtectionInterval', '10'),
-('main', 'trashForum', '0'),
-('main', 'secretTrashForum', '0'),
-('main', 'alwaysMinipic', '0'),
-('main', 'showExtraSidebar', '1'),
-('main', 'anncForum', '0'),
-('main', 'newsForum', '0'),
-('main', 'defaultGroup', '0'),
-('main', 'rootGroup', '4'),
-('main', 'bannedGroup', '-1');
-
-INSERT INTO `{$dbpref}smilies` (`id`, `code`, `image`) VALUES
-(1, ':)', 'smile.png'),
-(2, ';)', 'wink.png'),
-(3, ':D', 'biggrin.png'),
-(4, 'o_o', 'blank.png'),
-(5, ':awsum:', 'awsum.png'),
-(6, '-_-', 'annoyed.png'),
-(7, 'o_O', 'bigeyes.png'),
-(8, ':LOL:', 'lol.png'),
-(9, ':O', 'jawdrop.png'),
-(10, ':(', 'frown.png'),
-(11, ';_;', 'cry.png'),
-(12, '>:', 'mad.png'),
-(13, 'O_O', 'eek.png'),
-(14, '8-)', 'glasses.png'),
-(15, '^_^', 'cute.png'),
-(16, '^^;;;', 'cute2.png'),
-(17, '>_<', 'yuck.png'),
-(18, '<_<', 'shiftleft.png'),
-(19, '>_>', 'shiftright.png'),
-(20, '@_@', 'dizzy.png'),
-(21, '^~^', 'angel.png'),
-(22, '>:)', 'evil.png'),
-(23, 'x_x', 'sick.png'),
-(24, ':P', 'tongue.png'),
-(25, ':S', 'wobbly.png'),
-(26, ':[', 'vamp.png'),
-(27, '~:o', 'baby.png'),
-(28, ':YES:', 'yes.png'),
-(29, ':NO:', 'no.png'),
-(30, '<3', 'heart.png'),
-(31, ':3', 'colonthree.png'),
-(32, ':up:', 'approve.png'),
-(33, ':down:', 'deny.png'),
-(34, ':durr:', 'durrr.png'),
-(35, '^^;', 'embarras.png'),
-(36, ':barf:', 'barf.png'),
-(37, '._.', 'ashamed.png'),
-(38, '''.''', 'umm.png'),
-(39, '''_''', 'downcast.png'),
-(40, ':big:', 'teeth.png'),
-(41, ':lawl:', 'lawl.png'),
-(42, ':ninja:', 'ninja.png'),
-(43, ':pirate:', 'pirate.png'),
-(44, 'D:', 'outrage.png'),
-(45, ':sob:', 'sob.png'),
-(46, ':XD:', 'xd.png'),
-(47, ':nyan:', 'nyan.gif'),
-(48, ':c', 'frown_improved.png'),
-(49, ':yum:', 'yum.png');
