@@ -72,6 +72,8 @@ td:not([colspan='2'])
 <br>
 <?php
 //include("config/database.php");
+//so ABXD's salt file has it as a var, so include it and use it lol
+include("config/salt.php");
 require('lib/mysql.php');
 
 function phpescape($var)
@@ -112,7 +114,10 @@ if ($_POST['submit'])
 	$test->close();
 	
 	define('SALT', $salt);
-	$saltfile = '<?php define(\'SALT\', '.$_POST['passsalt'].'); ?>';
+	$saltfile = '<?php define(\'SALT\', '.$salt.'); ?>';
+	//rename ABXD's salt file
+	rename("config/salt.php","config/saltabxd.php")
+	//and let blargboard make its own dang salt
 	file_put_contents('config/salt.php', $saltfile);
 	
 	$kurifile = '<?php define(\'KURIKEY\', '.phpescape(Shake(32)).'); ?>';
@@ -148,8 +153,9 @@ else
 	<div class="blarg">
 	<table>
 	
-	<tr><td>Password Salt</td><td><input type="text" name="passsalt" value=""></td></tr>
-	<tr><td>MySQL username:</td><td><input type="text" name="dbusername" size=64 value=""></td></tr>
+	<!--<tr><td>Password Salt</td><td><input type="text" name="passsalt" value=""></td></tr>-->
+	<tr><td colspan=2>test text, wheeee</td></tr>
+	<!--<tr><td>MySQL username:</td><td><input type="text" name="dbusername" size=64 value=""></td></tr>
 	<tr><td>MySQL password:</td><td><input type="password" name="dbpassword" size=64 value=""></td></tr>
 	<tr><td>MySQL database:</td><td><input type="text" name="dbname" size=64 value=""></td></tr>
 	<tr><td colspan=2>&nbsp;</td></tr>
@@ -162,7 +168,7 @@ else
 	<tr><td>Board password:</td><td><input type="password" name="boardpassword" size=64 value=""></td></tr>
 	<tr><td>Confirm board password:</td><td><input type="password" name="bpconfirm" size=64 value=""></td></tr>
 	<tr><td colspan=2>An owner account with these credentials will be created on your board after the install process has completed.</td></tr>
-	<tr><td colspan=2>&nbsp;</td></tr>
+	<tr><td colspan=2>&nbsp;</td></tr> -->
 	
 	<tr><td colspan=2><input type="submit" name="submit" value="Install"></td></tr>
 	
