@@ -132,8 +132,8 @@ if ($_POST['submit'])
 	Upgrade();
 	Import('database.sql');
 	
-	Query("insert into {users} (id, name, password, pss, primarygroup, regdate, lastactivity, lastip, email, sex, theme) values ({0}, {1}, {2}, {3}, {4}, {5}, {5}, {6}, {7}, {8}, {9})", 
-		1, $boardusername, $sha, $pss, 4, time(), $_SERVER['REMOTE_ADDR'], '', 2, 'blargboard');
+	//here, instead of trying to detect a user's rank, just change the coloum name. way easier
+	Query("ALTER TABLE {users} CHANGE powerlevel primarygroup int(8)")
 		
 ?>
 	<h3>Your new Blargboard board has been successfully installed!</h3>
