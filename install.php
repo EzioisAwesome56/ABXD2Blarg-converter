@@ -72,23 +72,6 @@ td:not([colspan='2'])
 <br>
 <?php
 
-function phpescape($var)
-{
-	$var = addslashes($var);
-	$var = str_replace('\\\'', '\'', $var);
-	return '"'.$var.'"';
-}
-
-function Shake($len=16)
-{
-	$cset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPRQSTUVWXYZ0123456789";
-	$salt = "";
-	$chct = strlen($cset) - 1;
-	while (strlen($salt) < $len)
-		$salt .= $cset[mt_rand(0, $chct)];
-	return $salt;
-}
-
 // Acmlmboard 1.x style
 $footer = '</div></body></html>';
 
