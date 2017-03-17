@@ -71,10 +71,10 @@ td:not([colspan='2'])
 <h1>AcmlmboardXD 2 Blargboard Converter</h1>
 <br>
 <?php
-//include("config/database.php");
+include("config/database.php");
 //so ABXD's salt file has it as a var, so include it and use it lol
 include("config/salt.php");
-require('lib/mysql.php');
+
 
 function phpescape($var)
 {
@@ -121,6 +121,7 @@ if ($_POST['submit'])
 	file_put_contents('config/kurikey.php', $kurifile);
 	
 	require('lib/mysqlfunctions.php');
+	require('lib/mysql.php');
 	$debugMode = 1;
 	
 	Upgrade();
