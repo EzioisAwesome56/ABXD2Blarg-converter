@@ -277,3 +277,11 @@ INSERT INTO `{$dbpref}permissions` (`applyto`, `id`, `perm`, `arg`, `value`) VAL
 (0, 4, 'user.viewhiddenforums', 0, 1),
 (0, 4, 'user.votepolls', 0, 1),
 (0, 4, 'user.voteposts', 0, 1);
+
+INSERT INTO `{$dbpref}settings` (`plugin`, `name`, `value`) VALUES
+('main', 'anncForum', '0'),
+('main', 'newsForum', '0'),
+('main', 'defaultGroup', '0'),
+('main', 'rootGroup', '4'),
+('main', 'bannedGroup', '-1'),
+('main', 'secretTrashForum', '0'),

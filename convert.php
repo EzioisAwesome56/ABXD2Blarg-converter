@@ -142,7 +142,7 @@ if ($_POST['submit'])
 	<ul>
 		<li>delete convert.php, convertdb.sql, and the install files (install.php and database.sql)
 		<li><a href="./?page=login">log in to your board</a> and make sure everyhing works
-		<li>And also check to make sure the settings are in place
+		<li>Review the board settings and update them if needed
 	</ul>
 	<br>
 	Thank you for choosing Blargboard!<br>
