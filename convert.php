@@ -103,15 +103,6 @@ if (version_compare(PHP_VERSION, '5.3.0') < 0)
 
 if ($_POST['submit'])
 {
-	$boardusername = trim($_POST['boardusername']);
-	$boardpassword = $_POST['boardpassword'];
-	
-	if (!$boardusername || !$boardpassword)
-		die('Please enter a board username and password.'.$footer);
-		
-	if ($boardpassword !== $_POST['bpconfirm'])
-		die('Error: the passwords you entered don\'t match.'.$footer);
-	
 	$test = new mysqli($_POST['dbserver'], $_POST['dbusername'], $_POST['dbpassword'], $_POST['dbname']);
 	if ($test->connect_error)
 		die('Error: failed to connect to the MySQL server: '.$test->connect_error.'<br><br>Check your parameters.'.$footer);
