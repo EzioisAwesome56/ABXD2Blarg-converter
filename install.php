@@ -92,19 +92,12 @@ function Shake($len=16)
 // Acmlmboard 1.x style
 $footer = '</div></body></html>';
 
-// pre-install checks
-
-if (file_exists('config/database.php'))
-	die('The board is already installed.'.$footer);
+// pre-convert checks
 	
 $footer = '<br><br><a href="javascript:window.history.back();">Go back and try again</a></div></body></html>';
 
 if (version_compare(PHP_VERSION, '5.3.0') < 0)
 	die('Error: Blargboard requires PHP 5.3 or above.'.$footer);
-	
-if (!is_dir('config'))
-	if (!mkdir('config'))
-		die('Error: failed to create the config directory. Check the permissions of the user running PHP.'.$footer);
 	
 @mkdir('templates_c');
 
@@ -124,19 +117,6 @@ if ($_POST['submit'])
 		die('Error: failed to connect to the MySQL server: '.$test->connect_error.'<br><br>Check your parameters.'.$footer);
 	
 	$test->close();
-	
-	$dbconfig = 
-'<?php
-$dbserv = '.phpescape($_POST['dbserver']).';
-$dbuser = '.phpescape($_POST['dbusername']).';
-$dbpass = '.phpescape($_POST['dbpassword']).';
-$dbname = '.phpescape($_POST['dbname']).';
-$dbpref = '.phpescape($_POST['dbprefix']).';
-$debugMode = 0;
-$logSqlErrors = 0;
-?>';
-	if (file_put_contents('config/database.php', $dbconfig) === FALSE)
-		die('Error: failed to create the config file. Check the permissions of the user running PHP.'.$footer);
 	
 	$salt = Shake(24);
 	define('SALT', $salt);
