@@ -127,7 +127,7 @@ if ($_POST['submit'])
 	Import('database.sql');
 	
 	//here, instead of trying to detect a user's rank, just change the coloum name. way easier
-	Query("ALTER TABLE {users} CHANGE `powerlevel` `primarygroup` int(11)")
+	Query("ALTER TABLE \"users\" CHANGE \"powerlevel\" \"primarygroup\" [\"int(11)\"]")
 		
 ?>
 	<h3>This install of ABXD has been converted to BlargBoard</h3>
