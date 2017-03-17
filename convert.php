@@ -124,7 +124,7 @@ if ($_POST['submit'])
 	require('lib/mysql.php');
 	$debugMode = 1;
 	
-	//Upgrade();
+	Upgrade();
 	Import('database.sql');
 	
 	//here, instead of trying to detect a user's rank, just change the coloum name. way easier
