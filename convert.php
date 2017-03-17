@@ -115,9 +115,6 @@ if ($_POST['submit'])
 	
 	define('SALT', $salt);
 	$saltfile = '<?php define(\'SALT\', '.$salt.'); ?>';
-	//rename ABXD's salt file
-	rename("config/salt.php","config/saltabxd.php")
-	//and let blargboard make its own dang salt
 	file_put_contents('config/salt.php', $saltfile);
 	
 	$kurifile = '<?php define(\'KURIKEY\', '.phpescape(Shake(32)).'); ?>';
@@ -130,7 +127,7 @@ if ($_POST['submit'])
 	Import('database.sql');
 	
 	//here, instead of trying to detect a user's rank, just change the coloum name. way easier
-	Query("ALTER TABLE {users} CHANGE powerlevel primarygroup int(8)")
+	Query("ALTER TABLE {users} CHANGE `powerlevel` `primarygroup` int(11)")
 		
 ?>
 	<h3>This install of ABXD has been converted to BlargBoard</h3>
