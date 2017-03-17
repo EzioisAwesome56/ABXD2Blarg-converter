@@ -136,12 +136,13 @@ if ($_POST['submit'])
 	Query("ALTER TABLE {users} CHANGE powerlevel primarygroup int(8)")
 		
 ?>
-	<h3>Your new Blargboard board has been successfully installed!</h3>
+	<h3>This install of ABXD has been converted to BlargBoard</h3>
 	<br>
 	You should now:
 	<ul>
-		<li>delete install.php and database.sql
-		<li><a href="./?page=login">log in to your board</a> and configure it
+		<li>delete convert.php, convertdb.sql, and the install files (install.php and database.sql)
+		<li><a href="./?page=login">log in to your board</a> and make sure everyhing works
+		<li>And also check to make sure the settings are in place
 	</ul>
 	<br>
 	Thank you for choosing Blargboard!<br>
